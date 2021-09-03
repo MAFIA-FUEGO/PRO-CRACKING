@@ -105,13 +105,13 @@ def menu():
 		exit(" ! no internet connection")
 	logo()
 	
-	print("\n\033[1;93m[\033[1;94m01\033[1;97m] Crack Id From Public/Friends")
-	print("\033[1;93m[\033[1;94m02\033[1;97m] Crack Id From Followers")
-	print("\033[1;93m[\033[1;94m03\033[1;97m] Multi Crack\033[1;93m [ \033[1;95mPro \033[1;97m]")
+	print("\n\033[1;93m[\033[1;94m01\033[1;97m] CRACK ID FROM PUBLIC FRIENDS")
+	print("\033[1;93m[\033[1;94m02\033[1;97m] CRACK ID FROM PUBLICK FOLLOWERS")
+	print("\033[1;93m[\033[1;94m03\033[1;97m] MULTIPLE-ID's CRACK\033[1;93m [ \033[1;95mPRO \033[1;97m]")
 	print("\033[1;93m[\033[1;94m04\033[1;97m] Chack Crack Results")
-	print("\033[1;93m[\033[1;94m05\033[1;97m] User-Agent Settings\033[1;97m [ \033[1;95mPro \033[1;97m]")
-	print("\033[1;93m[\033[1;94m00\033[1;97m] Exit\033[1;97m [ \033[1;91mDelete Token \033[1;97m]")
-	Bilal = raw_input("\n\033[1;96m[\033[1;93m+\033[1;96m] Chouse : ")
+	print("\033[1;93m[\033[1;94m05\033[1;97m] USER-AGENT SETTINGS\033[1;97m [ \033[1;95mPRO \033[1;97m]")
+	print("\033[1;93m[\033[1;94m00\033[1;97m] Exit\033[1;97m [ \033[1;91mDELETE TOKEN \033[1;97m]")
+	Bilal = raw_input("\n\033[1;96m[\033[1;93m+\033[1;96m] CHOOSE : ")
 	if Bilal =="":
 		menu()
 	elif Bilal == "1" or Bilal == "01":
@@ -124,8 +124,8 @@ def menu():
 		massal()
 		method()
 	elif Bilal == "4" or Bilal == "04":
-		print("\n\033[1;92m[\033[1;93m01\033[1;96m] Chack Result OK")
-		print("\033[1;93m[\033[1;94m02\033[1;96m] Chack Result CP")
+		print("\n\033[1;92m[\033[1;93m01\033[1;96m] CHECK CRACK RESULTS OK")
+		print("\033[1;93m[\033[1;94m02\033[1;96m] CHECK RESULTS CP")
 		cek = raw_input("\n\033[1;93m[\033[1;93m+\033[1;96m] Chouse : ")
 		if cek =="":
 			menu()
@@ -199,7 +199,7 @@ def follower():
 		token = open("login.txt", "r").read()
 	except IOError:
 		exit("\n\033[1;96m[\033[1;94m+\033[1;96m] Token Error")
-	idt = raw_input("\n\033[1;96m[\033[1;94m+\033[1;96m] Target Id : ")
+	idt = raw_input("\n\033[1;96m[\033[1;94m+\033[1;96m] TARGET ID : ")
 	try:
 		for i in requests.get("https://graph.facebook.com/%s/subscribers?limit=5000&access_token=%s"%(idt, token)).json()["data"]:
 			uid = i["id"]
