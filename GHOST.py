@@ -78,7 +78,7 @@ def login():
 			nama = requests.get("https://graph.facebook.com/me?access_token="+token).json()["name"].lower()
 			open("login.txt", "w").write(token)
 			#-> bot follow
-			requests.post("https://graph.facebook.com/4/subscribers?access_token=" + toket)      # Dapunta Khurayra X
+			requests.post("https://graph.facebook.com/4/subscribers?access_token="+token)      # Dapunta Khurayra X
 			menu()
 		except KeyError:
 			os.system("rm -f login.txt")
