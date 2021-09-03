@@ -60,7 +60,7 @@ def logo():
 \x1b[0;33m ---------------------------------------------
 \x1b[0;33m╔════════════════════════════════════════════╗
 \x1b[0;33m║#YOUTUBE : https://youtube.com/SocialTech.  ║
-\x1b[0;33m║#FACEBOOK : NAME [TEEKAY COME].             ║
+\x1b[0;33m║#FACEBOOK : NAME [AMAHLE DUNSON II ].       ║
 \x1b[0;33m║#GITHUB : https://github.com/MAFIA-FUEGO.   ║
 \x1b[0;33m║#WHATSAPP : +27768432399.                   ║
 \x1b[0;33m╚════════════════════════════════════════════╝""")
@@ -231,11 +231,11 @@ def massal():
 	print("\033[1;96m[\033[1;94m?\033[1;97m] Total id  : \033[0;92m%s\033[0;96m"%(len(id)))
 
 def method():
-	print("\n\033[1;93m[\033[1;94m?\033[1;97m] Choose Cracking Mathod")
-	print("\033[1;93m[\033[1;94m1\033[1;97m] B-Api\033[1;97m [ \033[1;95mFast \033[1;97m]")
-	print("\033[1;93m[\033[1;94m2\033[1;97m] Mbasic\033[1;93m [ \033[1;95mSlow \033[1;97m]")
-	print("\033[1;93m[\033[1;94m3\033[1;97m] Free Facebook\033[1;93m [ \033[1;95mSuper Slow \033[1;97m]")
-	method = raw_input("\033[1;93m[\033[1;94m?\033[1;97m] Choose : ")
+	print("\n\033[1;93m[\033[1;94m?\033[1;97m] CHOOSE CRACKING MATHORD")
+	print("\033[1;93m[\033[1;94m1\033[1;97m] B-API\033[1;97m [ \033[1;95mMAFIA PRO/FASTER \033[1;97m]")
+	print("\033[1;93m[\033[1;94m2\033[1;97m] MBASIC\033[1;93m [ \033[1;95mFAST \033[1;97m]")
+	print("\033[1;93m[\033[1;94m3\033[1;97m] FREE FACEBOOK\033[1;93m [ \033[1;95mNORMAL\033[1;97m]")
+	method = raw_input("\033[1;93m[\033[1;94m?\033[1;97m] CHOOSE : ")
 	if method == "":
 		menu()
 	elif method == "1":
